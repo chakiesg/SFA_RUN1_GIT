@@ -1,4 +1,4 @@
-name: Simple Build
+name: Chakie Simple Build
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout private repo remotely
         uses: actions/checkout@v2
         with:
-          repository: secrets.PRIVATE_REPO_URL
+          repository: ${{ secrets.PRIVATE_REPO_URL }}
           path: <folder of choice>
           token: ${{ secrets.TOKEN }}
 
