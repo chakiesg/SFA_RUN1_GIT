@@ -1,0 +1,25 @@
+name: Simple Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build my project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout private repo remotely
+        uses: actions/checkout@v2
+        with:
+          repository: ICT-CET-Activities/hiddenRepo
+          path: <folder of choice>
+          token: ${{ secrets.TOKEN}}
+      - name: Show hidden files
+        run: |
+          cd <folder of choice>
+          ls
+      - name: Print message
+        run: echo "Build completed successfully!"
